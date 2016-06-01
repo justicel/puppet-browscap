@@ -22,10 +22,11 @@ class browscap::puppetmaster (
   $cron_weekday = '3',
   $cron_hour    = '23',
   $cron_minute  = '0'
+  $ini_location = '/etc/puppet/modules/browscap/files/php_browscap.ini'
 ){
   # Define the cron with the update command and schedule.
   cron { 'browscap_download':
-    command => '/usr/bin/curl http://browscap.org/stream?q=Full_PHP_BrowsCapINI -o /etc/puppet/modules/browscap/files/php_browscap.ini',
+    command => "/usr/bin/curl http://browscap.org/stream?q=Full_PHP_BrowsCapINI -o ${ini_location}",
     user    => $cron_user,
     weekday => $cron_weekday,
     hour    => $cron_hour,
