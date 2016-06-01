@@ -21,7 +21,7 @@ class browscap::puppetmaster (
   $cron_user    = 'root',
   $cron_weekday = '3',
   $cron_hour    = '23',
-  $cron_minute  = '0'
+  $cron_minute  = '0',
   $ini_location = '/etc/puppet/modules/browscap/files/php_browscap.ini'
 ){
   # Define the cron with the update command and schedule.
